@@ -402,4 +402,11 @@ footer {
     .footer-right {
         text-align: right;
     }
+   body {
+    background: red !important;
+}
+
+.home {
+    background: blue !important;
+}
 }
