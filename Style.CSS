@@ -1,3 +1,7 @@
+/* ------------------------------
+   RESET
+------------------------------ */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,8 +13,8 @@ html {
 }
 
 body {
-    background: #e8dfd2;
-    color: #332a24;
+    background: #eee5d8;
+    color: #33261d;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -20,210 +24,382 @@ a {
 }
 
 
-/* MAIN */
+/* ------------------------------
+   PAGE
+------------------------------ */
 
 .home {
     min-height: 100vh;
-    padding: 45px 5vw 30px;
+    padding: 35px 4vw 25px;
+
     display: flex;
     flex-direction: column;
 }
 
 
-/* INTRO */
+/* ------------------------------
+   HERO
+------------------------------ */
+
+.hero {
+    flex: 1;
+    min-height: 52vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-label {
+    margin-bottom: 35px;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #856f5c;
+}
+
+
+/* ------------------------------
+   NAME
+------------------------------ */
+
+.hero h1 {
+    font-size: clamp(80px, 13.5vw, 205px);
+
+    font-weight: 400;
+    line-height: 0.82;
+
+    letter-spacing: -0.075em;
+
+    max-width: 1500px;
+}
+
+
+/* ------------------------------
+   INTRO
+------------------------------ */
 
 .intro {
-    max-width: 1400px;
-}
-
-.intro h1 {
-    font-size: clamp(90px, 15vw, 220px);
-    line-height: 0.78;
-    letter-spacing: -9px;
-    font-weight: 500;
-}
-
-.intro-text {
-    max-width: 520px;
     margin-top: 55px;
 
-    font-size: 19px;
-    line-height: 1.5;
+    display: flex;
+    justify-content: flex-end;
+}
 
-    color: #685b50;
+.intro p {
+    max-width: 470px;
+
+    font-size: 18px;
+    line-height: 1.55;
+
+    color: #6f5c4d;
 }
 
 
-/* PROJECT */
+/* ------------------------------
+   PROJECT CARD
+------------------------------ */
 
-.project-section {
-    margin-top: 100px;
-    margin-bottom: 100px;
+.projects-section {
+    margin-top: 40px;
+    margin-bottom: 55px;
 }
 
-.project-box {
+.projects-card {
     display: block;
 
-    background: #b69a7d;
-    color: #30271f;
+    background: #b49573;
 
-    padding: 28px 32px 30px;
+    min-height: 390px;
 
-    min-height: 330px;
+    padding: 27px 32px 25px;
+
+    position: relative;
+
+    overflow: hidden;
 
     transition:
-        transform 0.35s ease,
-        background-color 0.35s ease,
-        box-shadow 0.35s ease;
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 0.3s ease,
+        box-shadow 0.4s ease;
 }
 
-.project-box:hover {
+
+/* HOVER */
+
+.projects-card:hover {
     transform: scale(1.025);
-    background: #ad9072;
 
-    box-shadow: 0 18px 45px rgba(70, 52, 38, 0.15);
+    background: #a98a69;
+
+    box-shadow:
+        0 30px 70px rgba(67, 48, 34, 0.18);
 }
 
 
-/* PROJECT TOP */
+/* ------------------------------
+   CARD TOP
+------------------------------ */
 
-.project-box-top {
+.card-top {
     display: flex;
     justify-content: space-between;
 
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    color: #665548;
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    color: #594737;
 }
 
 
-/* PROJECT MAIN */
+/* ------------------------------
+   CARD CENTER
+------------------------------ */
 
-.project-box-main {
-    height: 220px;
+.card-center {
+    position: absolute;
+
+    left: 32px;
+    right: 32px;
+
+    top: 50%;
+    transform: translateY(-50%);
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.project-box-main h2 {
-    font-size: clamp(65px, 10vw, 150px);
+.card-center h2 {
+    font-size: clamp(80px, 12vw, 180px);
+
     font-weight: 400;
-    letter-spacing: -6px;
-}
 
-.project-arrow {
-    font-size: 55px;
-    font-weight: 300;
+    letter-spacing: -0.07em;
 
-    transition: transform 0.35s ease;
-}
-
-.project-box:hover .project-arrow {
-    transform: translate(8px, -8px);
+    line-height: 0.8;
 }
 
 
-/* PROJECT BOTTOM */
+/* ------------------------------
+   CIRCLE
+------------------------------ */
 
-.project-box-bottom {
-    display: flex;
-    justify-content: space-between;
+.card-circle {
+    width: 105px;
+    height: 105px;
 
-    padding-top: 18px;
-    border-top: 1px solid rgba(48, 39, 31, 0.35);
+    border: 1px solid rgba(51, 38, 29, 0.5);
 
-    font-size: 12px;
-    letter-spacing: 0.5px;
-}
-
-
-/* FOOTER */
-
-.home-footer {
-    margin-top: auto;
-
-    padding-top: 25px;
-    border-top: 1px solid #b8aa9b;
+    border-radius: 50%;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+
+    transition:
+        transform 0.4s ease,
+        background-color 0.3s ease;
+}
+
+.projects-card:hover .card-circle {
+    transform: rotate(12deg) scale(1.12);
+
+    background: #33261d;
+    color: #eee5d8;
+}
+
+.card-circle span {
+    font-size: 38px;
+    font-weight: 300;
+}
+
+
+/* ------------------------------
+   CARD BOTTOM
+------------------------------ */
+
+.card-bottom {
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 32px;
+    right: 32px;
+
+    padding-top: 17px;
+
+    border-top: 1px solid rgba(51, 38, 29, 0.35);
+
+    display: flex;
+    justify-content: space-between;
 
     font-size: 11px;
-    letter-spacing: 1.2px;
 
-    color: #75675b;
+    letter-spacing: 1px;
+
+    color: #594737;
 }
 
-.footer-links {
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+
+footer {
+    display: grid;
+
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #c8b9a7;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    color: #806f60;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-center {
     display: flex;
-    gap: 25px;
+    gap: 28px;
 }
 
-.footer-links a {
+.footer-center a {
     transition: color 0.2s ease;
 }
 
-.footer-links a:hover {
-    color: #2d241e;
+.footer-center a:hover {
+    color: #33261d;
+}
+
+.footer-right {
+    text-align: right;
 }
 
 
-/* MOBILE */
+/* ------------------------------
+   TABLET
+------------------------------ */
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
+
+    .hero h1 {
+        font-size: 15vw;
+    }
+
+    .intro {
+        justify-content: flex-start;
+    }
+
+    .projects-card {
+        min-height: 330px;
+    }
+
+    .card-center h2 {
+        font-size: 13vw;
+    }
+
+    .card-circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .card-circle span {
+        font-size: 30px;
+    }
+}
+
+
+/* ------------------------------
+   MOBILE
+------------------------------ */
+
+@media (max-width: 600px) {
 
     .home {
-        padding: 30px 6vw 25px;
+        padding: 25px 5vw 20px;
     }
 
-    .intro h1 {
-        font-size: 23vw;
-        letter-spacing: -5px;
+    .hero {
+        min-height: 55vh;
     }
 
-    .intro-text {
+    .hero-label {
+        margin-bottom: 25px;
+    }
+
+    .hero h1 {
+        font-size: 19vw;
+        letter-spacing: -0.07em;
+    }
+
+    .intro {
         margin-top: 40px;
-        font-size: 17px;
-        max-width: 400px;
     }
 
-    .project-section {
-        margin-top: 70px;
-        margin-bottom: 70px;
+    .intro p {
+        font-size: 16px;
+        max-width: 360px;
     }
 
-    .project-box {
-        min-height: 280px;
-        padding: 22px;
+    .projects-section {
+        margin-top: 25px;
+        margin-bottom: 45px;
     }
 
-    .project-box-main {
-        height: 180px;
+    .projects-card {
+        min-height: 300px;
+
+        padding: 20px;
     }
 
-    .project-box-main h2 {
-        font-size: 18vw;
-        letter-spacing: -3px;
+    .card-center {
+        left: 20px;
+        right: 20px;
     }
 
-    .project-arrow {
-        font-size: 40px;
+    .card-center h2 {
+        font-size: 17vw;
     }
 
-    .project-box-bottom {
-        font-size: 10px;
+    .card-circle {
+        width: 65px;
+        height: 65px;
     }
 
-    .home-footer {
-        flex-wrap: wrap;
-        gap: 15px;
+    .card-circle span {
+        font-size: 25px;
     }
 
-    .footer-links {
-        order: 3;
-        width: 100%;
+    .card-bottom {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    footer {
+        grid-template-columns: 1fr 1fr;
+
+        row-gap: 15px;
+    }
+
+    .footer-center {
+        grid-column: 1 / -1;
+        grid-row: 2;
+
+        gap: 20px;
+    }
+
+    .footer-right {
+        text-align: right;
     }
 }
