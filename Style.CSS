@@ -52,7 +52,7 @@ a {
 .top-nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: right;
 
     font-size: 12px;
     letter-spacing: 1.5px;
